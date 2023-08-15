@@ -85,6 +85,6 @@ npm test
 
 **Jest**: A delightful JavaScript Testing Framework with a focus on simplicity.
 
-**:Testing Library**:: A set of utilities for testing user interfaces, encouraging testing best practices.
+**Testing Library**: A set of utilities for testing user interfaces, encouraging testing best practices.
 
 If you encounter any issues during the setup or execution process, feel free to consult the project's documentation or seek help online. Enjoy exploring the Twitter clone!
