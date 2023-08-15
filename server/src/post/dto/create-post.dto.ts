@@ -3,4 +3,5 @@ export class CreatePostDto {
   username: 'string';
   description: 'string';
   hasImage?: 'string';
+  timestamp: 'string';
 }

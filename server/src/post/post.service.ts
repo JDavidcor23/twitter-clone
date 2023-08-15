@@ -1,5 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { addDoc, collection, getDocs } from 'firebase/firestore';
+import {
+  addDoc,
+  collection,
+  getDocs,
+  query,
+  orderBy,
+} from 'firebase/firestore';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { db } from '../firebase.config';
@@ -10,14 +16,15 @@ export class PostService {
     await addDoc(collection(db, 'post'), {
       ...createPostDto,
     });
-    const querySnapshot = await getDocs(collection(db, 'post'));
-    const allData = querySnapshot.docs.map((doc) => doc.data());
-
-    return allData;
+    const resp = await getDocs(collection(db, 'post'));
+    return resp.docs.map((doc) => doc.data());
   }
 
   async findAll() {
-    const querySnapshot = await getDocs(collection(db, 'post'));
+    const allPosts = collection(db, 'post');
+
+    const queryOrdered = query(allPosts, orderBy('timestamp', 'desc'));
+    const querySnapshot = await getDocs(queryOrdered);
     const allData = querySnapshot.docs.map((doc) => {
       return {
         id: doc.id,

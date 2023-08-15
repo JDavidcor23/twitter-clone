@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
 import { Post, Sidebar } from "../components";
 import { usePost } from "../hooks/usePost";
+import image from "../assets/image.png";
 
 export const Home = () => {
-  const { getPosts, posts } = usePost();
+  const { getPosts, posts, uploadImage, handleChange, values, handleSubmit } =
+    usePost();
+
+  const profileImage = "https://img.freepik.com/free-icon/user_318-286823.jpg";
+  const name = "Jhon Doe";
+  const username = "@jhondoe";
+
   useEffect(() => {
     getPosts();
   }, []);
@@ -15,15 +22,31 @@ export const Home = () => {
           <h2>Home</h2>
         </div>
         <div className="tweetBox">
-          <form action="">
+          <form
+            action=""
+            onSubmit={(e) => handleSubmit(e, name, username, profileImage)}
+          >
             <div className="tweetBox__input">
-              <img
-                src="https://img.freepik.com/free-icon/user_318-286823.jpg"
-                alt=""
+              <img src={profileImage} alt="" />
+              <input
+                type="text"
+                placeholder="What's happening?"
+                onChange={handleChange}
+                name="description"
               />
-              <input type="text" placeholder="What's happening?" />
             </div>
-            <button className="tweetBox__tweetButton">Tweet</button>
+            <img src={values?.hasImage} alt="" className="previewImage" />
+            <div className="tweetBox__containerButtons">
+              <button className="tweetBox__tweetButton" type="submit">
+                Tweet
+              </button>
+              <input
+                className="tweetBox__uploadButton custom-file-input"
+                type="file"
+                accept=".jpg, .png"
+                onChange={uploadImage}
+              />
+            </div>
           </form>
         </div>
         {posts.length > 0 &&

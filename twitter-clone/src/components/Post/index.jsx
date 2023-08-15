@@ -15,18 +15,18 @@ export const Post = ({ data }) => {
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              {data.name}
+              {data?.name}
               <span className="post__headerSpecial">
                 <img src={verifiedIcon} alt="" className="post-badge" />
-                {`@${data.username}`}
+                {`@${data?.username}`}
               </span>
             </h3>
           </div>
           <div className="post__headerDescription">
-            <p>{data.description}</p>
+            <p>{data?.description}</p>
           </div>
         </div>
-        <img src={data.hasImage} alt="" />
+        <img src={data?.hasImage} alt="" />
         <PostFooter />
       </div>
     </div>

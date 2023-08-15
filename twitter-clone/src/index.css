@@ -184,3 +184,68 @@ img.post-badge {
   width: 100%;
   max-width: 70%;
 }
+.tweetBox__uploadButton {
+  margin-left: 20px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.tweetBox__uploadButton:hover {
+  background-color: var(--twitter-background);
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+.tweetBox__uploadImage {
+  width: 40px;
+}
+.custom-file-input {
+  color: transparent;
+  margin-top: 15px;
+  width: 40px;
+  height: 44px;
+  justify-content: center;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.tweetBox__containerButtons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.custom-file-input::before {
+  content: "+";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--twitter-color);
+  border: none;
+  font-size: 40px;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+.custom-file-input:hover::before {
+  border-color: none;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e97d05, #e97d05);
+}
+.previewImage {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 40%;
+  object-fit: contain;
+  border-radius: 10px;
+}

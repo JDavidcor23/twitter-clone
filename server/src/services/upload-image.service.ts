@@ -23,13 +23,9 @@ export class UploadImageService {
         ACL: 'public-read',
       };
       const { Location } = await this.s3.upload(params).promise();
-      await this.saveImage(Location);
-      return Location;
+      return { urlImage: Location };
     } catch (error) {
       throw new Error(error);
     }
-  }
-  async saveImage(url: string) {
-    console.log(url);
   }
 }
