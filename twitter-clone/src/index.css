@@ -51,8 +51,8 @@ body {
 .body {
   display: flex;
   min-height: 100vh;
-  max-width: 1400px;
-  width: 100%;
+  max-width: 70vw;
+  padding: 0 10px;
 }
 .sidebar {
   border-right: 1px solid var(--twitter-background);
@@ -65,7 +65,7 @@ body {
 .feed {
   flex: 0.5;
   border-right: 1px solid var(--twitter-background);
-  width: 1000px;
+  min-width: fit-content;
   margin-top: 20px;
 }
 .feed__header {
@@ -183,12 +183,4 @@ img.post-badge {
 .post__headerDescription {
   width: 100%;
   max-width: 70%;
-}
-.container {
-  width: 90vw;
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
