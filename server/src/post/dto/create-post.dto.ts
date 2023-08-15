@@ -1,7 +1,7 @@
 export class CreatePostDto {
-  name: 'string';
-  username: 'string';
-  description: 'string';
-  hasImage?: 'string';
-  timestamp: 'string';
+  name: string;
+  username: string;
+  description: string;
+  hasImage?: string;
+  timestamp: number;
 }

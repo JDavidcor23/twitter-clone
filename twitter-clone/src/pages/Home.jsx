@@ -1,15 +1,21 @@
 import React, { useEffect } from "react";
 import { Post, Sidebar } from "../components";
 import { usePost } from "../hooks/usePost";
-import image from "../assets/image.png";
 
 export const Home = () => {
-  const { getPosts, posts, uploadImage, handleChange, values, handleSubmit } =
-    usePost();
+  const {
+    getPosts,
+    posts,
+    uploadImage,
+    handleChange,
+    values,
+    handleSubmit,
+    customError,
+  } = usePost();
 
   const profileImage = "https://img.freepik.com/free-icon/user_318-286823.jpg";
-  const name = "Jhon Doe";
-  const username = "@jhondoe";
+  const name = "Jorge David Diaz";
+  const username = "@jdavidcor23";
 
   useEffect(() => {
     getPosts();
@@ -48,6 +54,11 @@ export const Home = () => {
               />
             </div>
           </form>
+          {customError.length > 0 && (
+            <div className="error" role="alert">
+              {customError}
+            </div>
+          )}
         </div>
         {posts.length > 0 &&
           posts.map((post) => <Post {...post} key={post.id} />)}

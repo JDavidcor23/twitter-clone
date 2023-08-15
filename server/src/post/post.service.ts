@@ -38,9 +38,7 @@ export class PostService {
     return `This action returns a #${id} post`;
   }
 
-  update(id: number, updatePostDto: UpdatePostDto) {
-    return `This action updates a #${id} post`;
-  }
+  update(id: number, updatePostDto: UpdatePostDto) {}
 
   remove(id: number) {
     return `This action removes a #${id} post`;
