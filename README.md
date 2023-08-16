@@ -9,6 +9,7 @@ Welcome to the Twitter clone project! This document will guide you through the n
 - Make sure you have [Nodejs](https://nodejs.org/es) installed on your system.
 - If you haven't installed the AWS Command Line Interface (CLI) yet, you can download it [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and follow the installation instructions.
   .
+## Watch this video for an explanation of this project
 
 📺 [ Project Explanation Video](https://www.youtube.com/watch?v=oHz7exxq20Q&ab_channel=JorgeDiaz)
 
