@@ -34,14 +34,14 @@ Welcome to the Twitter clone project! This document will guide you through the n
    npm install
    ```
 
-4. **Configurar Variables de AWS:** Configure your AWS credentials on your machine by executing the following command in the terminal:
+4. **Configure AWS Variables:** Configure your AWS credentials on your machine by executing the following command in the terminal:
 
    ```bash
    # Replace with your AWS variables
    aws configure
    ```
 
-5. **Configure AWS Variables:** Once you've completed the previous steps, you're ready to run the project:
+5. **Run project:** Once you've completed the previous steps, you're ready to run the project:
    ```bash
    # From the 'server' folder, start the server
    cd server
